@@ -22,7 +22,7 @@ public class Assignment5_5 extends AbstractAssignment {
             }
 
             int fahrenheit = 20 + celsius / 2 * 5;                                            // Get right side fahrenheit value.
-            String fahrenheitString = String.format("%.3f", celsius * 9.0 / 5.0 + 32);        // Get the Fahrenheit value as a String.
+            String fahrenheitString = String.format("%.1f", celsius * 9.0 / 5.0 + 32);        // Get the Fahrenheit value as a String.
             String celsiusString = String.format("%.3f", (fahrenheit - 32.0) / (9.0 / 5.0));  // Fahrentheit -> Celsius -> formatted String.
 
             //Print the formatted table row.
