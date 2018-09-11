@@ -16,11 +16,7 @@ public class Assignment5_5 extends AbstractAssignment {
     @Override
     public void print(Scanner scanner) {
         System.out.println("Celsius     Fahrenheit   |   Fahrenheit     Celsius");  // Print header.
-        for (int celsius = 0; celsius <= 100; celsius++) {                          // Loop from 0-100(inclusive) celsius.
-            if (celsius % 2 == 1) {
-                continue; // Skip the value if it is an uneven number.
-            }
-
+        for (int celsius = 0; celsius <= 100; celsius += 2) {                          // Loop from 0-100(inclusive) celsius.
             int fahrenheit = 20 + celsius / 2 * 5;                                            // Get right side fahrenheit value.
             String fahrenheitString = String.format("%.1f", celsius * 9.0 / 5.0 + 32);        // Get the Fahrenheit value as a String.
             String celsiusString = String.format("%.3f", (fahrenheit - 32.0) / (9.0 / 5.0));  // Fahrentheit -> Celsius -> formatted String.
