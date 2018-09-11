@@ -5,7 +5,6 @@
  */
 package modul3_opgaver.assignments;
 
-import java.nio.CharBuffer;
 import java.util.Scanner;
 
 public class Assignment5_5 extends AbstractAssignment {
@@ -16,34 +15,18 @@ public class Assignment5_5 extends AbstractAssignment {
 
     @Override
     public void print(Scanner scanner) {
-        System.out.println("Celsius     Fahrenheit   |   Fahrenheit     Celsius");  //Print header.
-        for (int celsius = 0; celsius <= 100; celsius++) {                          //Loop from 0-100(inclusive) celsius.
+        System.out.println("Celsius     Fahrenheit   |   Fahrenheit     Celsius");  // Print header.
+        for (int celsius = 0; celsius <= 100; celsius++) {                          // Loop from 0-100(inclusive) celsius.
             if (celsius % 2 == 1) {
-                continue; //Skip the value if it is an uneven number.
+                continue; // Skip the value if it is an uneven number.
             }
-            
-            StringBuilder line = new StringBuilder(String.valueOf(celsius));  //Instance of StringBuilder.
 
-            //Add left side.
-            String fahrenheitString = String.format("%.3f", celsius * 9.0 / 5.0 + 32);                                                              //Get the Fahrenheit value as a String.
-            line.append(getSpaces(22 - String.valueOf(celsius).length() - fahrenheitString.length())).append(fahrenheitString).append("   |   ");   //Append spaces and Fahrenheit.
+            int fahrenheit = 20 + celsius / 2 * 5;                                            // Get right side fahrenheit value.
+            String fahrenheitString = String.format("%.3f", celsius * 9.0 / 5.0 + 32);        // Get the Fahrenheit value as a String.
+            String celsiusString = String.format("%.3f", (fahrenheit - 32.0) / (9.0 / 5.0));  // Fahrentheit -> Celsius -> formatted String.
 
-            //Add right side.
-            int fahrenheit = 20 + celsius / 2 * 5;                                                                                                  //Get left side fahrenheit value.
-            String celsiusString = String.format("%.3f", (fahrenheit - 32.0) / (9.0 / 5.0));                                                        //Calculate the celsius from fahrenheit and get the formatted String.
-            line.append(fahrenheit).append(getSpaces(22 - String.valueOf(fahrenheit).length() - celsiusString.length())).append(celsiusString);     //Append Fahrenheit, spaces, and celsius.
-
-            System.out.println(line.toString());    //Finally print the line.
+            //Print the formatted table row.
+            System.out.printf("%-7s        %7s   |   %-7s        %7s%n", celsius, fahrenheitString, fahrenheit, celsiusString);
         }
-    }
-
-    /**
-     * Return a String with the given number of spaces.
-     *
-     * @param numberOfSpaces the number of spaces the String should contain.
-     * @return a String containing 'numberOfSpaces' spaces.
-     */
-    private String getSpaces(int numberOfSpaces) {
-        return CharBuffer.allocate(numberOfSpaces).toString().replace('\0', ' ');
     }
 }
