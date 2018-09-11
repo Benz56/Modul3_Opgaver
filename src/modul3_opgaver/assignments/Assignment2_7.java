@@ -20,6 +20,6 @@ public class Assignment2_7 extends AbstractAssignment {
         int minutes = ScannerUtil.getInteger(scanner, "Input a minute value:");  // Get the console input
         int years = minutes / 525_600;                                           // Divide the console input with the number of minutes per year to get years.
         int remainingDays = minutes % 525_600 / 1_440;                           // Get the remaining minutes using modulos and divide by number of minutes per day to get the number of remaning days.
-        Stream.of("The number of minuts converted to years and days are:", " Years: " + years, " Days: " + remainingDays).forEach(line -> System.out.println(line));
+        Stream.of("The number of minuts test converted to years and days are:", " Years: " + years, " Days: " + remainingDays).forEach(line -> System.out.println(line));
     }
 }
