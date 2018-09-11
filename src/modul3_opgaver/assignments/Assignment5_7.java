@@ -25,8 +25,7 @@ public class Assignment5_7 extends AbstractAssignment {
             initialTuition *= 1.06;                  // Increment the inititalTuition by 6%.
             if (year == 9) {                         // If the year is 9(tenth year) print the intital tuition value.
                 System.out.println(" In ten years the tuition is $" + String.format("%.2f", initialTuition));
-            }
-            if (year > 9) {                          // If the year is greate than 9(after the tenth year) add the initialTuition to the fourYearTuition.
+            } else if (year > 9) {                   // If the year is greate than 9(after the tenth year) add the initialTuition to the fourYearTuition.
                 fourYearTuition += initialTuition;
             }
         }
