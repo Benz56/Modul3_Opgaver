@@ -17,7 +17,7 @@ public class AssignmentB_5 extends AbstractAssignment {
     public void print(Scanner scanner) {
         int lastPrimeNumber = 0;
         for (int i = 2; i < 1_000_000; i++) {   // Loop from 2 - 999.999 (2 is the smallest prime number)
-            if (isPrimeNumber(i)) {             // If i is not a prime number assign the value.
+            if (isPrimeNumber(i)) {
                 lastPrimeNumber = i;            // Set the lastPrimeNumber to the value of i (which is a prime number)
             }
         }
